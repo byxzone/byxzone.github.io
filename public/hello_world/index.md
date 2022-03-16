@@ -25,7 +25,7 @@
 
 - **Nginx** （作为静态页面的web服务器）
 
-并且我在Gitee上单独开了一个仓库，存放Hugo生成的静态页面，并且开通了Gitee Pages。
+并且我在Gitee上单独开了一个仓库，存放Hugo生成的站点，并且开通了Gitee Pages。
 
 我的想法是这样的：
 
@@ -33,7 +33,7 @@
 
 - 将编写好的内容，放到Hugo中，并生成静态页面。（因为Nginx的网页目录就是public，所以此时已经可以通过域名访问到）
 
-- 将生成的静态页面，通过git push到Gitee中，并在Gitee Pages中部署。
+- 将站点通过git push到Gitee中，并在Gitee Pages中部署。
 
 以上在环境方面的准备，接下来是内容方面的准备。
 

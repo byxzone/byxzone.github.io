@@ -1,4 +1,4 @@
-## Welcome to [barryX的技术笔记](https://barryx.cn)
+## Welcome to [barryX的技术笔记](https://barryx.gitee.io/)
 
 ### About This Blog
 

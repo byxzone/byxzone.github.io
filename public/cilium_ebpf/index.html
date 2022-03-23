@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/barryx.cn\/cilium_ebpf\/"
-        },"genre": "posts","wordcount":  2571 ,
+        },"genre": "posts","wordcount":  2594 ,
         "url": "http:\/\/barryx.cn\/cilium_ebpf\/","datePublished": "2022-03-15T23:33:27+08:00","dateModified": "2022-03-15T23:33:27+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -105,8 +105,8 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Cilium eBPF 搭建与使用</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>barryX</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ebpf/"><i class="far fa-folder fa-fw"></i>eBPF</a>&nbsp;<a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2571 字&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>barryX</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ebpf/"><i class="far fa-folder fa-fw"></i>eBPF</a>&nbsp;<a href="/categories/linux-kernel/"><i class="far fa-folder fa-fw"></i>Linux Kernel</a>&nbsp;<a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2594 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -117,7 +117,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#一环境搭建">一、环境搭建：</a>
+        <li><a href="#一环境搭建">一、环境搭建</a>
           <ul>
             <li><a href="#0基础环境">0.基础环境</a></li>
             <li><a href="#requirements">Requirements</a></li>
@@ -133,13 +133,14 @@
             <li><a href="#监听open系统调用获取filename">监听open系统调用，获取filename</a></li>
           </ul>
         </li>
-        <li><a href="#参考文献">参考文献：</a></li>
+        <li><a href="#参考文献">参考文献</a></li>
+        <li><a href="#more-about-me">More about me</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>目前使用 Go 开发 eBPF 程序可以使用的框架有 <strong>IO Visor-gobpf</strong>、<strong>Dropbox-goebpf</strong>和 <strong>Cilium-ebpf</strong>等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。</p>
-<h3 id="一环境搭建">一、环境搭建：</h3>
+<h3 id="一环境搭建">一、环境搭建</h3>
 <h4 id="0基础环境">0.基础环境</h4>
 <p>官方文档：https://github.com/cilium/ebpf</p>
 <blockquote>
@@ -716,12 +717,15 @@ node-2976    [000] d..31 22779.323348: bpf_trace_printk: pid:2976,filename:/proc
 node-2976    [000] d..31 22779.323374: bpf_trace_printk: pid:2976,filename:/proc/47269/cmdline,err:20
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="参考文献">参考文献：</h3>
+</div><h3 id="参考文献">参考文献</h3>
 <p><a href="https://zhuanlan.zhihu.com/p/466893888">https://zhuanlan.zhihu.com/p/466893888</a></p>
 <p><a href="https://blog.csdn.net/qq_31362439/article/details/122727406">https://blog.csdn.net/qq_31362439/article/details/122727406</a></p>
 <p><a href="https://www.jianshu.com/p/a866147021da">https://www.jianshu.com/p/a866147021da</a></p>
 <p><a href="https://blog.csdn.net/jasonactions/article/details/116125922">https://blog.csdn.net/jasonactions/article/details/116125922</a></p>
 <p><a href="https://szp2016.github.io/uncategorized/ebpf%E5%85%A5%E9%97%A8/">https://szp2016.github.io/uncategorized/ebpf%E5%85%A5%E9%97%A8/</a></p>
+<h3 id="more-about-me">More about me</h3>
+<p>欢迎关注 「barryX的技术笔记」 微信公众号</p>
+<p><img src="https://gitee.com/barryx/kernel_study/raw/master/img/202203231934741.png" style="zoom:33%;" /></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -3,7 +3,7 @@
 
 目前使用 Go 开发 eBPF 程序可以使用的框架有 **IO Visor-gobpf**、**Dropbox-goebpf**和 **Cilium-ebpf**等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。
 
-### 一、环境搭建：
+### 一、环境搭建
 
 #### 0.基础环境
 
@@ -381,7 +381,7 @@ node-2976    [000] d..31 22779.323348: bpf_trace_printk: pid:2976,filename:/proc
 node-2976    [000] d..31 22779.323374: bpf_trace_printk: pid:2976,filename:/proc/47269/cmdline,err:20
 ```
 
-### 参考文献：
+### 参考文献
 
 https://zhuanlan.zhihu.com/p/466893888
 
@@ -392,3 +392,9 @@ https://www.jianshu.com/p/a866147021da
 https://blog.csdn.net/jasonactions/article/details/116125922
 
 https://szp2016.github.io/uncategorized/ebpf%E5%85%A5%E9%97%A8/
+
+### More about me
+
+欢迎关注 「barryX的技术笔记」 微信公众号
+
+<img src="https://gitee.com/barryx/kernel_study/raw/master/img/202203231934741.png" style="zoom:33%;" />

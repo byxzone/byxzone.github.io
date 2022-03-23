@@ -4,7 +4,7 @@ date: 2022-03-15T23:33:27+08:00
 categories: ["eBPF","Golang"]
 ---
 
-目前使用 Go 开发 eBPF 程序可以使用的框架有 **IO Visor-gobpf**、**Dropbox-goebpf **和 **Cilium-ebpf **等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。
+目前使用 Go 开发 eBPF 程序可以使用的框架有 **IO Visor-gobpf**、**Dropbox-goebpf**和 **Cilium-ebpf**等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。
 
 ### 一、环境搭建：
 
@@ -209,9 +209,9 @@ func main() {
 
 `fn`中定义了kprobe附着的函数为`sys_execve`，并锁定当前进程 eBPF 资源的内存。
 
-之后是调用`loadBpfObjects`将预先编译的 eBPF 程序和 maps 加载到内核，其定义在生成的**.go**文件中，最后是调用`link.Kprobe`进行真正的attach。
+之后是调用`loadBpfObjects`将预先编译的 eBPF 程序和 maps 加载到内核，其定义在生成的`.go`文件中，最后是调用`link.Kprobe`进行真正的attach。
 
-关于这个`objs`，其类型是`bpfObjects`，定义在生成的**.go**文件：
+关于这个`objs`，其类型是`bpfObjects`，定义在生成的`.go`文件：
 
 ```go
 // bpfSpecs contains maps and programs before they are loaded into the kernel.

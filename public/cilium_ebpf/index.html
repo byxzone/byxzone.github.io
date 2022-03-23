@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Cilium eBPF 搭建与使用 - barryX的技术笔记</title><meta name="Description" content="记录有关Linux Kernel/eBPF/Golang有关内容"><meta property="og:title" content="Cilium eBPF 搭建与使用" />
-<meta property="og:description" content="目前使用 Go 开发 eBPF 程序可以使用的框架有 IO Visor-gobpf、**Dropbox-goebpf **和 **Cilium-ebpf **等，考虑到 Cilium 的社区活跃度和未来的发" />
+<meta property="og:description" content="目前使用 Go 开发 eBPF 程序可以使用的框架有 IO Visor-gobpf、Dropbox-goebpf和 Cilium-ebpf等，考虑到 Cilium 的社区活跃度和" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://barryx.cn/cilium_ebpf/" />
 <meta property="og:image" content="http://barryx.cn/logo.png"/>
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="http://barryx.cn/logo.png"/>
 
 <meta name="twitter:title" content="Cilium eBPF 搭建与使用"/>
-<meta name="twitter:description" content="目前使用 Go 开发 eBPF 程序可以使用的框架有 IO Visor-gobpf、**Dropbox-goebpf **和 **Cilium-ebpf **等，考虑到 Cilium 的社区活跃度和未来的发"/>
+<meta name="twitter:description" content="目前使用 Go 开发 eBPF 程序可以使用的框架有 IO Visor-gobpf、Dropbox-goebpf和 Cilium-ebpf等，考虑到 Cilium 的社区活跃度和"/>
 <meta name="application-name" content="barryX的技术笔记">
 <meta name="apple-mobile-web-app-title" content="barryX的技术笔记"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/barryx.cn\/cilium_ebpf\/"
-        },"genre": "posts","wordcount":  2575 ,
+        },"genre": "posts","wordcount":  2571 ,
         "url": "http:\/\/barryx.cn\/cilium_ebpf\/","datePublished": "2022-03-15T23:33:27+08:00","dateModified": "2022-03-15T23:33:27+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Cilium eBPF 搭建与使用</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>barryX</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ebpf/"><i class="far fa-folder fa-fw"></i>eBPF</a>&nbsp;<a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2575 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-15">2022-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2571 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -138,7 +138,7 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>目前使用 Go 开发 eBPF 程序可以使用的框架有 <strong>IO Visor-gobpf</strong>、**Dropbox-goebpf **和 **Cilium-ebpf **等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。</p>
+            </div><div class="content" id="content"><p>目前使用 Go 开发 eBPF 程序可以使用的框架有 <strong>IO Visor-gobpf</strong>、<strong>Dropbox-goebpf</strong>和 <strong>Cilium-ebpf</strong>等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。</p>
 <h3 id="一环境搭建">一、环境搭建：</h3>
 <h4 id="0基础环境">0.基础环境</h4>
 <p>官方文档：https://github.com/cilium/ebpf</p>
@@ -442,8 +442,8 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </code></pre></td></tr></table>
 </div>
 </div><p><code>fn</code>中定义了kprobe附着的函数为<code>sys_execve</code>，并锁定当前进程 eBPF 资源的内存。</p>
-<p>之后是调用<code>loadBpfObjects</code>将预先编译的 eBPF 程序和 maps 加载到内核，其定义在生成的**.go**文件中，最后是调用<code>link.Kprobe</code>进行真正的attach。</p>
-<p>关于这个<code>objs</code>，其类型是<code>bpfObjects</code>，定义在生成的**.go**文件：</p>
+<p>之后是调用<code>loadBpfObjects</code>将预先编译的 eBPF 程序和 maps 加载到内核，其定义在生成的<code>.go</code>文件中，最后是调用<code>link.Kprobe</code>进行真正的attach。</p>
+<p>关于这个<code>objs</code>，其类型是<code>bpfObjects</code>，定义在生成的<code>.go</code>文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1

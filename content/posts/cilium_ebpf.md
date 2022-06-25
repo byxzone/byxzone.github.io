@@ -400,4 +400,4 @@ https://szp2016.github.io/uncategorized/ebpf%E5%85%A5%E9%97%A8/
 
 欢迎关注 「barryX的技术笔记」 微信公众号
 
-<img src="https://gitee.com/barryx/kernel_study/raw/master/img/202203231934741.png" style="zoom:33%;" />
+<img src="/images/wx.png" style="zoom:33%;" />

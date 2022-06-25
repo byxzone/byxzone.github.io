@@ -1,44 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>barryX的技术笔记</title>
-    <link>http://barryx.cn/</link>
-    <description>Recent content on barryX的技术笔记</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <managingEditor>i@barryx.cn (barryX)</managingEditor>
-    <webMaster>i@barryx.cn (barryX)</webMaster>
-    <lastBuildDate>Sat, 25 Jun 2022 20:33:27 +0800</lastBuildDate>
-    
-	<atom:link href="http://barryx.cn/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>本地搭建 Bootlin elixir 查阅内核代码</title>
-      <link>http://barryx.cn/build_bootlin_elixir/</link>
-      <pubDate>Sat, 25 Jun 2022 20:33:27 +0800</pubDate>
-      <author>i@barryx.cn (barryX)</author>
-      <guid>http://barryx.cn/build_bootlin_elixir/</guid>
-      <description>平时经常使用elixir.bootlin.com查看内核源码，很方便。但是苦于该站点服务器在国外，国内用起来很卡很慢，所以想着自己在本地搭一</description>
-    </item>
-    
-    <item>
-      <title>Cilium eBPF 搭建与使用</title>
-      <link>http://barryx.cn/cilium_ebpf/</link>
-      <pubDate>Tue, 15 Mar 2022 23:33:27 +0800</pubDate>
-      <author>i@barryx.cn (barryX)</author>
-      <guid>http://barryx.cn/cilium_ebpf/</guid>
-      <description>目前使用 Go 开发 eBPF 程序可以使用的框架有 IO Visor-gobpf、Dropbox-goebpf和 Cilium-ebpf等，考虑到 Cilium 的社区活跃度和</description>
-    </item>
-    
-    <item>
-      <title>Hello World!</title>
-      <link>http://barryx.cn/hello_world/</link>
-      <pubDate>Tue, 15 Mar 2022 23:33:27 +0800</pubDate>
-      <author>i@barryx.cn (barryX)</author>
-      <guid>http://barryx.cn/hello_world/</guid>
-      <description>这篇文章是把博客从阿里云迁到腾讯云上之后的第一篇博客。 之前是在阿里云上使用WordPress搭建的，但是感觉比较臃肿，而且之前也就写过几篇博</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>barryX的技术笔记</title>
+        <link>http://barryx.cn/</link>
+        <description>记录有关Linux Kernel/eBPF/Golang有关内容</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@barryx.cn (barryX)</managingEditor>
+            <webMaster>i@barryx.cn (barryX)</webMaster><lastBuildDate>Sat, 25 Jun 2022 20:33:27 &#43;0800</lastBuildDate>
+            <atom:link href="http://barryx.cn/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>本地搭建 Bootlin elixir 查阅内核代码</title>
+    <link>http://barryx.cn/build_bootlin_elixir/</link>
+    <pubDate>Sat, 25 Jun 2022 20:33:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://barryx.cn/build_bootlin_elixir/</guid>
+    <description><![CDATA[平时经常使用elixir.bootlin.com查看内核源码，很方便。但是苦于该站点服务器在国外，国内用起来很卡很慢，所以想着自己在本地搭一]]></description>
+</item><item>
+    <title>Cilium eBPF 搭建与使用</title>
+    <link>http://barryx.cn/cilium_ebpf/</link>
+    <pubDate>Tue, 15 Mar 2022 23:33:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://barryx.cn/cilium_ebpf/</guid>
+    <description><![CDATA[目前使用 Go 开发 eBPF 程序可以使用的框架有 IO Visor-gobpf、Dropbox-goebpf和 Cilium-ebpf等，考虑到 Cilium 的社区活跃度和]]></description>
+</item><item>
+    <title>Hello World!</title>
+    <link>http://barryx.cn/hello_world/</link>
+    <pubDate>Tue, 15 Mar 2022 23:33:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://barryx.cn/hello_world/</guid>
+    <description><![CDATA[这篇文章是把博客从阿里云迁到腾讯云上之后的第一篇博客。 之前是在阿里云上使用WordPress搭建的，但是感觉比较臃肿，而且之前也就写过几篇博]]></description>
+</item></channel>
 </rss>

@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/home/ubuntu/barryX",
+	"sourceRoot": "/Users/barryx/Nutstore Files/我的坚果云/Blog/byxzone.github.io",
 	"sources": [
 		"themes/LoveIt/assets/css/style.scss",
 		"themes/LoveIt/assets/css/_variables.scss",

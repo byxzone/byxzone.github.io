@@ -4,7 +4,14 @@
         <link>http://barryx.cn/posts/</link>
         <description>所有文章 | barryX的技术笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@barryx.cn (barryX)</managingEditor>
-            <webMaster>i@barryx.cn (barryX)</webMaster><lastBuildDate>Sat, 25 Jun 2022 20:33:27 &#43;0800</lastBuildDate><atom:link href="http://barryx.cn/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@barryx.cn (barryX)</webMaster><lastBuildDate>Sat, 02 Jul 2022 12:14:27 &#43;0800</lastBuildDate><atom:link href="http://barryx.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>【译】 Libbpf：初学者指南</title>
+    <link>http://barryx.cn/libbpf_a_beginners_guide/</link>
+    <pubDate>Sat, 02 Jul 2022 12:14:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://barryx.cn/libbpf_a_beginners_guide/</guid>
+    <description><![CDATA[（原文链接：https://www.containiq.com/post/libbpf） 本文讨论了 libbpf 及其在开发 BPF 工具和应用程序时相对于 BCC 的优]]></description>
+</item><item>
     <title>本地搭建 Bootlin elixir 查阅内核代码</title>
     <link>http://barryx.cn/build_bootlin_elixir/</link>
     <pubDate>Sat, 25 Jun 2022 20:33:27 &#43;0800</pubDate>

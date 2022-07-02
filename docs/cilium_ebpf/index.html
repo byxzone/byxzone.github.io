@@ -165,8 +165,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt install clang llvm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt install clang llvm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2配置环境变量">2.配置环境变量</h4>
 <div class="highlight"><div class="chroma">
@@ -174,8 +174,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">export BPF_CLANG=clang
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">export BPF_CLANG=clang
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3将cilium-ebpf克隆到本地">3.将Cilium eBPF克隆到本地：</h4>
 <div class="highlight"><div class="chroma">
@@ -183,8 +183,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/cilium/ebpf.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://github.com/cilium/ebpf.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="4测试">4.测试</h4>
 <p>进入<code>kprobe</code>目录：</p>
@@ -193,8 +193,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd kprobe
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd kprobe
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>删除之前生成的文件：</p>
 <div class="highlight"><div class="chroma">
@@ -203,9 +203,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rm *.o
-rm bpf_*.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rm *.o
+</span></span><span class="line"><span class="cl">rm bpf_*.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时剩下的文件应为：</p>
 <div class="highlight"><div class="chroma">
@@ -215,10 +215,10 @@ rm bpf_*.go
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">.
-├── kprobe.c
-└── main.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── kprobe.c
+</span></span><span class="line"><span class="cl">└── main.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在该目录下执行：</p>
 <div class="highlight"><div class="chroma">
@@ -226,8 +226,8 @@ rm bpf_*.go
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">go generate
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">go generate
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时该目录下的文件：</p>
 <div class="highlight"><div class="chroma">
@@ -242,15 +242,15 @@ rm bpf_*.go
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ tree
-.
-├── bpf_bpfeb.go
-├── bpf_bpfeb.o
-├── bpf_bpfel.go
-├── bpf_bpfel.o
-├── kprobe.c
-└── main.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ tree
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── bpf_bpfeb.go
+</span></span><span class="line"><span class="cl">├── bpf_bpfeb.o
+</span></span><span class="line"><span class="cl">├── bpf_bpfel.go
+</span></span><span class="line"><span class="cl">├── bpf_bpfel.o
+</span></span><span class="line"><span class="cl">├── kprobe.c
+</span></span><span class="line"><span class="cl">└── main.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以看出，此操作分别生成了两对 <strong>.go</strong> 和 <strong>.o</strong> 文件。</p>
 <p>继续执行：</p>
@@ -259,8 +259,8 @@ rm bpf_*.go
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">go build
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">go build
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>生成了二进制文件<code>kprobe</code></p>
 <p>执行该二进制文件：</p>
@@ -274,13 +274,13 @@ rm bpf_*.go
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo ./kprobe
-2022/03/23 14:51:54 Waiting for events..
-2022/03/23 14:51:55 sys_execve called 6 times
-2022/03/23 14:51:56 sys_execve called 25 times
-2022/03/23 14:51:57 sys_execve called 35 times
-2022/03/23 14:51:58 sys_execve called 37 times
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo ./kprobe
+</span></span><span class="line"><span class="cl">2022/03/23 14:51:54 Waiting for events..
+</span></span><span class="line"><span class="cl">2022/03/23 14:51:55 sys_execve called 6 times
+</span></span><span class="line"><span class="cl">2022/03/23 14:51:56 sys_execve called 25 times
+</span></span><span class="line"><span class="cl">2022/03/23 14:51:57 sys_execve called 35 times
+</span></span><span class="line"><span class="cl">2022/03/23 14:51:58 sys_execve called 37 times
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>打印的结果为执行<code>sys_execve</code>的次数，若正确输出则说明环境搭建成功。</p>
 <h3 id="二创建自己的-cilium-ebpf-项目">二、创建自己的 Cilium eBPF 项目</h3>
@@ -290,8 +290,8 @@ rm bpf_*.go
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir YOUR_PATH &amp;&amp; cd YOUR_PATH
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir YOUR_PATH &amp;&amp; cd YOUR_PATH
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将 Cilium eBPF examples 中的相关文件复制过来作为基础进行修改：</p>
 <div class="highlight"><div class="chroma">
@@ -302,11 +302,11 @@ rm bpf_*.go
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd CILIUM_EBPF_PATH/examples   #替换为自己的Cilium eBPF路径
-cp -r headers/ YOUR_PATH       #头文件目录
-cp kprobe/main.go YOUR_PATH    #Go主程序
-cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd CILIUM_EBPF_PATH/examples   #替换为自己的Cilium eBPF路径
+</span></span><span class="line"><span class="cl">cp -r headers/ YOUR_PATH       #头文件目录
+</span></span><span class="line"><span class="cl">cp kprobe/main.go YOUR_PATH    #Go主程序
+</span></span><span class="line"><span class="cl">cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>编辑 main.go：</p>
 <div class="highlight"><div class="chroma">
@@ -314,8 +314,8 @@ cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">vim main.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vim main.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将第19行</p>
 <div class="highlight"><div class="chroma">
@@ -323,8 +323,8 @@ cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -cc $BPF_CLANG -c    flags $BPF_CFLAGS bpf kprobe.c -- -I../headers
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -cc $BPF_CLANG -c    flags $BPF_CFLAGS bpf kprobe.c -- -I../headers
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>改为（修改了最后headers的相对路径）</p>
 <div class="highlight"><div class="chroma">
@@ -332,8 +332,8 @@ cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -cc $BPF_CLANG -c    flags $BPF_CFLAGS bpf kprobe.c -- -I./headers
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -cc $BPF_CLANG -c    flags $BPF_CFLAGS bpf kprobe.c -- -I./headers
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>关于 go generate 的原理：</p>
 <blockquote>
@@ -345,8 +345,8 @@ cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">go mod init YOUR_NAME
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">go mod init YOUR_NAME
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时生成了<strong>go.mod</strong>文件，再继续执行：</p>
 <div class="highlight"><div class="chroma">
@@ -354,8 +354,8 @@ cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">go mod tidy
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">go mod tidy
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将依赖添加到了go.mod 中</p>
 <div class="highlight"><div class="chroma">
@@ -370,15 +370,15 @@ cp kprobe/kprobe.c YOUR_PATH   #eBPF C程序
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ cat go.mod
-module YOUR_NAME
-
-go 1.18
-
-require github.com/cilium/ebpf v0.8.1
-
-require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cat go.mod
+</span></span><span class="line"><span class="cl">module YOUR_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">go 1.18
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">require github.com/cilium/ebpf v0.8.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行 go generate &amp;&amp; go build 测试，若无报错并成功生成了 bpf_xxx.go、bpf_xxx.o文件和可执行文件则说明配置成功。</p>
 <h3 id="三基于-kprobe-例程打造自己的-ebpf-程序">三、基于 kprobe 例程打造自己的 eBPF 程序</h3>
@@ -414,33 +414,33 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-
-	<span class="c1">// Name of the kernel function to trace.
-</span><span class="c1"></span>	<span class="nx">fn</span> <span class="o">:=</span> <span class="s">&#34;sys_execve&#34;</span>
-
-	<span class="c1">// Allow the current process to lock memory for eBPF resources.
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">rlimit</span><span class="p">.</span><span class="nf">RemoveMemlock</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="c1">// Load pre-compiled programs and maps into the kernel.
-</span><span class="c1"></span>	<span class="nx">objs</span> <span class="o">:=</span> <span class="nx">bpfObjects</span><span class="p">{}</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">loadBpfObjects</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">objs</span><span class="p">,</span> <span class="kc">nil</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;loading objects: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">objs</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-
-	<span class="c1">// Open a Kprobe at the entry point of the kernel function and attach the
-</span><span class="c1"></span>	<span class="c1">// pre-compiled program. Each time the kernel function enters, the program
-</span><span class="c1"></span>	<span class="c1">// will increment the execution counter by 1. The read loop below polls this
-</span><span class="c1"></span>	<span class="c1">// map value once per second.
-</span><span class="c1"></span>	<span class="nx">kp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">link</span><span class="p">.</span><span class="nf">Kprobe</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">objs</span><span class="p">.</span><span class="nx">KprobeExecve</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;opening kprobe: %s&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">kp</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Name of the kernel function to trace.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fn</span> <span class="o">:=</span> <span class="s">&#34;sys_execve&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Allow the current process to lock memory for eBPF resources.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">rlimit</span><span class="p">.</span><span class="nf">RemoveMemlock</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Load pre-compiled programs and maps into the kernel.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">objs</span> <span class="o">:=</span> <span class="nx">bpfObjects</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">loadBpfObjects</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">objs</span><span class="p">,</span> <span class="kc">nil</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;loading objects: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">objs</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Open a Kprobe at the entry point of the kernel function and attach the
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// pre-compiled program. Each time the kernel function enters, the program
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// will increment the execution counter by 1. The read loop below polls this
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// map value once per second.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">kp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">link</span><span class="p">.</span><span class="nf">Kprobe</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">objs</span><span class="p">.</span><span class="nx">KprobeExecve</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;opening kprobe: %s&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">kp</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>fn</code>中定义了kprobe附着的函数为<code>sys_execve</code>，并锁定当前进程 eBPF 资源的内存。</p>
 <p>之后是调用<code>loadBpfObjects</code>将预先编译的 eBPF 程序和 maps 加载到内核，其定义在生成的<code>.go</code>文件中，最后是调用<code>link.Kprobe</code>进行真正的attach。</p>
@@ -456,14 +456,14 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// bpfSpecs contains maps and programs before they are loaded into the kernel.
-</span><span class="c1">//
-</span><span class="c1">// It can be passed ebpf.CollectionSpec.Assign.
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">bpfSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">bpfProgramSpecs</span>
-	<span class="nx">bpfMapSpecs</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// bpfSpecs contains maps and programs before they are loaded into the kernel.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// It can be passed ebpf.CollectionSpec.Assign.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">bpfSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bpfProgramSpecs</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bpfMapSpecs</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>bpfProgramSpecs</code>、<code>bpfMapSpecs</code>的定义分别为：</p>
 <div class="highlight"><div class="chroma">
@@ -483,20 +483,20 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// bpfSpecs contains programs before they are loaded into the kernel.
-</span><span class="c1">//
-</span><span class="c1">// It can be passed ebpf.CollectionSpec.Assign.
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">bpfProgramSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">KprobeExecve</span> <span class="o">*</span><span class="nx">ebpf</span><span class="p">.</span><span class="nx">ProgramSpec</span> <span class="s">`ebpf:&#34;kprobe_execve&#34;`</span>
-<span class="p">}</span>
-
-<span class="c1">// bpfMapSpecs contains maps before they are loaded into the kernel.
-</span><span class="c1">//
-</span><span class="c1">// It can be passed ebpf.CollectionSpec.Assign.
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">bpfMapSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">KprobeMap</span> <span class="o">*</span><span class="nx">ebpf</span><span class="p">.</span><span class="nx">MapSpec</span> <span class="s">`ebpf:&#34;kprobe_map&#34;`</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// bpfSpecs contains programs before they are loaded into the kernel.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// It can be passed ebpf.CollectionSpec.Assign.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">bpfProgramSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">KprobeExecve</span> <span class="o">*</span><span class="nx">ebpf</span><span class="p">.</span><span class="nx">ProgramSpec</span> <span class="s">`ebpf:&#34;kprobe_execve&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// bpfMapSpecs contains maps before they are loaded into the kernel.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// It can be passed ebpf.CollectionSpec.Assign.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">bpfMapSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">KprobeMap</span> <span class="o">*</span><span class="nx">ebpf</span><span class="p">.</span><span class="nx">MapSpec</span> <span class="s">`ebpf:&#34;kprobe_map&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>kprobe_execve</code>、<code>kprobe_map</code>分别对应 kprobe.c 文件中定义的：</p>
 <div class="highlight"><div class="chroma">
@@ -511,15 +511,15 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">struct</span> <span class="n">bpf_map_def</span> <span class="nf">SEC</span><span class="p">(</span><span class="s">&#34;maps&#34;</span><span class="p">)</span> <span class="n">kprobe_map</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-
-<span class="n">SEC</span><span class="p">(</span><span class="s">&#34;kprobe/sys_execve&#34;</span><span class="p">)</span>
-<span class="kt">int</span> <span class="n">kprobe_execve</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">bpf_map_def</span> <span class="nf">SEC</span><span class="p">(</span><span class="s">&#34;maps&#34;</span><span class="p">)</span> <span class="n">kprobe_map</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">SEC</span><span class="p">(</span><span class="s">&#34;kprobe/sys_execve&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">kprobe_execve</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>所以，Go 中的这两个名字 <code>KprobeExecve</code>、<code>KprobeMap</code> 就是根据 C 程序中的这两个名字生成过来的，规则是：<strong>首字母大写，去除下划线<code>_</code>并大写后一个字母</strong>。</p>
 <h4 id="监听open系统调用获取filename">监听open系统调用，获取filename</h4>
@@ -531,10 +531,10 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">SYSCALL_DEFINE3(open, const char __user *, filename, int, flags, umode_t, mode)
-	|--do_sys_open(AT_FDCWD, filename, flags, mode);
-			|--do_sys_openat2(dfd, filename, &amp;how);
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SYSCALL_DEFINE3(open, const char __user *, filename, int, flags, umode_t, mode)
+</span></span><span class="line"><span class="cl">	|--do_sys_open(AT_FDCWD, filename, flags, mode);
+</span></span><span class="line"><span class="cl">			|--do_sys_openat2(dfd, filename, &amp;how);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -542,9 +542,9 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">long</span> <span class="nf">do_sys_openat2</span><span class="p">(</span><span class="kt">int</span> <span class="n">dfd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">__user</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span>
-			   <span class="k">struct</span> <span class="n">open_how</span> <span class="o">*</span><span class="n">how</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">long</span> <span class="nf">do_sys_openat2</span><span class="p">(</span><span class="kt">int</span> <span class="n">dfd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">__user</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			   <span class="k">struct</span> <span class="n">open_how</span> <span class="o">*</span><span class="n">how</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们的目标是获取<code>do_sys_openat2</code>的第二个参数<code>filename</code>。打开kprobe.c开始改造：</p>
 <p>将宏SEC的名字和函数名改为：</p>
@@ -554,9 +554,9 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">SEC</span><span class="p">(</span><span class="s">&#34;kprobe/do_sys_openat2&#34;</span><span class="p">)</span>
-<span class="kt">int</span> <span class="n">kprobe_openat2</span><span class="p">(</span><span class="k">struct</span> <span class="n">pt_regs</span> <span class="o">*</span><span class="n">ctx</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">SEC</span><span class="p">(</span><span class="s">&#34;kprobe/do_sys_openat2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">kprobe_openat2</span><span class="p">(</span><span class="k">struct</span> <span class="n">pt_regs</span> <span class="o">*</span><span class="n">ctx</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们想知道当前是哪个进程进行了open系统调用，所以可以通过BPF辅助函数<code>bpf_get_current_pid_tgid</code>获得当前pid_tgid：</p>
 <div class="highlight"><div class="chroma">
@@ -564,8 +564,8 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">u32</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">bpf_get_current_pid_tgid</span><span class="p">()</span> <span class="o">&gt;&gt;</span> <span class="mi">32</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">u32</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">bpf_get_current_pid_tgid</span><span class="p">()</span> <span class="o">&gt;&gt;</span> <span class="mi">32</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>关于BPF辅助函数，可以参考文档：https://www.man7.org/linux/man-pages/man7/bpf-helpers.7.html</p>
@@ -582,13 +582,13 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define PT_REGS_PARM1(x) ((x)-&gt;rdi)
-</span><span class="cp">#define PT_REGS_PARM2(x) ((x)-&gt;rsi)
-</span><span class="cp">#define PT_REGS_PARM3(x) ((x)-&gt;rdx)
-</span><span class="cp">#define PT_REGS_PARM4(x) ((x)-&gt;rcx)
-</span><span class="cp">#define PT_REGS_PARM5(x) ((x)-&gt;r8)
-</span><span class="cp">#define PT_REGS_RET(x) ((x)-&gt;rsp)
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define PT_REGS_PARM1(x) ((x)-&gt;rdi)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define PT_REGS_PARM2(x) ((x)-&gt;rsi)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define PT_REGS_PARM3(x) ((x)-&gt;rdx)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define PT_REGS_PARM4(x) ((x)-&gt;rcx)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define PT_REGS_PARM5(x) ((x)-&gt;r8)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define PT_REGS_RET(x) ((x)-&gt;rsp)
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>（所以需要在 kprobe.c 中 <code>#include &quot;bpf_tracing.h&quot;</code>）</p>
 <p><code>__user</code>代表该数据在用户空间，所以需要<code>bpf_probe_read_user_str</code>读取:</p>
@@ -599,10 +599,10 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">char</span> <span class="n">filename</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
-<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">fp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">PT_REGS_PARM2</span><span class="p">(</span><span class="n">ctx</span><span class="p">);</span>
-<span class="kt">long</span> <span class="n">err</span> <span class="o">=</span> <span class="n">bpf_probe_read_user_str</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">fp</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">filename</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">fp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">PT_REGS_PARM2</span><span class="p">(</span><span class="n">ctx</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">err</span> <span class="o">=</span> <span class="n">bpf_probe_read_user_str</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">fp</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>之后可以通过<code>bpf_printk</code>将这些数据输出到<code>/sys/kernel/debug/tracing/trace</code>中：</p>
 <div class="highlight"><div class="chroma">
@@ -610,8 +610,8 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bpf_printk(&#34;pid:%d,filename:%s,err:%ld&#34;,pid,filename,err);
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bpf_printk(&#34;pid:%d,filename:%s,err:%ld&#34;,pid,filename,err);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>kprobe.c 改造结束了，但是使用<code>PT_REGS_PARM2</code>需要指定target，在main.go中，继续修改第19行为：</p>
 <div class="highlight"><div class="chroma">
@@ -619,8 +619,8 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -cc $BPF_CLANG -cflags $BPF_CFLAGS --target=amd64 bpf kprobe.c -- -I./headers
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -cc $BPF_CLANG -cflags $BPF_CFLAGS --target=amd64 bpf kprobe.c -- -I./headers
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>我所使用的机器平台为amd64，所以我加上了<code>--target=amd64</code></p>
 <p>删除之前生成的文件，否则可能会在之后报错：</p>
@@ -630,9 +630,9 @@ require golang.org/x/sys v0.0.0-20210906170528-6f6e22806c34 // indirect
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rm *.o
-rm bpf_*.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rm *.o
+</span></span><span class="line"><span class="cl">rm bpf_*.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行 <code>go generate</code> 调用bpf2go生成，此次由于指定了target为amd64，所以生成的文件为：</p>
 <div class="highlight"><div class="chroma">
@@ -641,9 +641,9 @@ rm bpf_*.go
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bpf_bpfel_x86.go
-bpf_bpfel_x86.o
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bpf_bpfel_x86.go
+</span></span><span class="line"><span class="cl">bpf_bpfel_x86.o
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>打开 bpf_bpfel_x86.go</p>
 <p>由于我们修改了 kprobe.c 中的函数名，所以此处也对应的发生了改变：</p>
@@ -654,10 +654,10 @@ bpf_bpfel_x86.o
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">bpfProgramSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">KprobeOpenat2</span> <span class="o">*</span><span class="nx">ebpf</span><span class="p">.</span><span class="nx">ProgramSpec</span> <span class="s">`ebpf:&#34;kprobe_openat2&#34;`</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">bpfProgramSpecs</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">KprobeOpenat2</span> <span class="o">*</span><span class="nx">ebpf</span><span class="p">.</span><span class="nx">ProgramSpec</span> <span class="s">`ebpf:&#34;kprobe_openat2&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们需要将 main.go 一并更改（第44行）：</p>
 <div class="highlight"><div class="chroma">
@@ -665,8 +665,8 @@ bpf_bpfel_x86.o
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">kp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">link</span><span class="p">.</span><span class="nf">Kprobe</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">objs</span><span class="p">.</span><span class="nx">KprobeOpenat2</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">kp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">link</span><span class="p">.</span><span class="nf">Kprobe</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">objs</span><span class="p">.</span><span class="nx">KprobeOpenat2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后更改<code>fn</code>为我们要 attach 的函数 <code>do_sys_openat2</code>（第26行）：</p>
 <div class="highlight"><div class="chroma">
@@ -674,8 +674,8 @@ bpf_bpfel_x86.o
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">fn</span> <span class="o">:=</span> <span class="s">&#34;do_sys_openat2&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">fn</span> <span class="o">:=</span> <span class="s">&#34;do_sys_openat2&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后，生成二进制文件并运行：</p>
 <div class="highlight"><div class="chroma">
@@ -686,11 +686,11 @@ bpf_bpfel_x86.o
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ go build &amp;&amp; sudo ./YOUR_NAME
-2022/03/23 17:01:03 Waiting for events..
-2022/03/23 17:01:04 do_sys_openat2 called 760 times
-2022/03/23 17:01:05 do_sys_openat2 called 958 times
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ go build &amp;&amp; sudo ./YOUR_NAME
+</span></span><span class="line"><span class="cl">2022/03/23 17:01:03 Waiting for events..
+</span></span><span class="line"><span class="cl">2022/03/23 17:01:04 do_sys_openat2 called 760 times
+</span></span><span class="line"><span class="cl">2022/03/23 17:01:05 do_sys_openat2 called 958 times
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>查看输出</p>
 <div class="highlight"><div class="chroma">
@@ -706,16 +706,16 @@ bpf_bpfel_x86.o
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo cat /sys/kernel/debug/tracing/trace
-cat-188135  [000] d..31 22778.701532: bpf_trace_printk: pid:188135,filename:/lib/x86_64-linux-g,err:20
-cat-188135  [000] d..31 22778.701626: bpf_trace_printk: pid:188135,filename:/usr/lib/locale/loc,err:20
-cat-188135  [000] d..31 22778.701647: bpf_trace_printk: pid:188135,filename:/proc/188110/stat,err:18
-sleep-188141  [000] d..31 22779.153330: bpf_trace_printk: pid:188141,filename:/lib/x86_64-linux-g,err:20
-sleep-188141  [000] d..31 22779.153332: bpf_trace_printk: pid:188141,filename:/lib/x86_64-linux-g,err:20
-node-2180    [001] d..31 22779.321307: bpf_trace_printk: pid:2180,filename:/proc/188110/cmdlin,err:20
-node-2976    [000] d..31 22779.323348: bpf_trace_printk: pid:2976,filename:/proc/3137/cmdline,err:19
-node-2976    [000] d..31 22779.323374: bpf_trace_printk: pid:2976,filename:/proc/47269/cmdline,err:20
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo cat /sys/kernel/debug/tracing/trace
+</span></span><span class="line"><span class="cl">cat-188135  [000] d..31 22778.701532: bpf_trace_printk: pid:188135,filename:/lib/x86_64-linux-g,err:20
+</span></span><span class="line"><span class="cl">cat-188135  [000] d..31 22778.701626: bpf_trace_printk: pid:188135,filename:/usr/lib/locale/loc,err:20
+</span></span><span class="line"><span class="cl">cat-188135  [000] d..31 22778.701647: bpf_trace_printk: pid:188135,filename:/proc/188110/stat,err:18
+</span></span><span class="line"><span class="cl">sleep-188141  [000] d..31 22779.153330: bpf_trace_printk: pid:188141,filename:/lib/x86_64-linux-g,err:20
+</span></span><span class="line"><span class="cl">sleep-188141  [000] d..31 22779.153332: bpf_trace_printk: pid:188141,filename:/lib/x86_64-linux-g,err:20
+</span></span><span class="line"><span class="cl">node-2180    [001] d..31 22779.321307: bpf_trace_printk: pid:2180,filename:/proc/188110/cmdlin,err:20
+</span></span><span class="line"><span class="cl">node-2976    [000] d..31 22779.323348: bpf_trace_printk: pid:2976,filename:/proc/3137/cmdline,err:19
+</span></span><span class="line"><span class="cl">node-2976    [000] d..31 22779.323374: bpf_trace_printk: pid:2976,filename:/proc/47269/cmdline,err:20
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="参考文献">参考文献</h3>
 <p><a href="https://zhuanlan.zhihu.com/p/466893888" target="_blank" rel="noopener noreffer">https://zhuanlan.zhihu.com/p/466893888</a></p>
@@ -755,7 +755,7 @@ node-2976    [000] d..31 22779.323374: bpf_trace_printk: pid:2976,filename:/proc
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><p hidden><script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279728742&web_id=1279728742"></script></p></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line"><p hidden><script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279728742&web_id=1279728742"></script></p></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.95.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">barryX</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/">冀ICP备2021002807号-1</a></span></div>
         </div>

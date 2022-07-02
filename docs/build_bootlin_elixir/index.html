@@ -20,7 +20,7 @@
 <meta name="application-name" content="barryX的技术笔记">
 <meta name="apple-mobile-web-app-title" content="barryX的技术笔记"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://barryx.cn/build_bootlin_elixir/" /><link rel="prev" href="http://barryx.cn/cilium_ebpf/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://barryx.cn/build_bootlin_elixir/" /><link rel="prev" href="http://barryx.cn/cilium_ebpf/" /><link rel="next" href="http://barryx.cn/libbpf_a_beginners_guide/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -152,9 +152,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt-get -y install python3 python3-pip python3-jinja2 python3-bsddb3 python3-pytest perl git libjansson4 libyaml-0-2 wget
-pip3 install falcon
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt-get -y install python3 python3-pip python3-jinja2 python3-bsddb3 python3-pytest perl git libjansson4 libyaml-0-2 wget
+</span></span><span class="line"><span class="cl">pip3 install falcon
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="下载两个特殊依赖并安装">下载两个特殊依赖并安装</h4>
 <div class="highlight"><div class="chroma">
@@ -165,11 +165,11 @@ pip3 install falcon
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget https://bootlin.com/pub/elixir/universal-ctags_0+git20200526-0ubuntu1_amd64.deb
-wget https://bootlin.com/pub/elixir/Pygments-2.6.1.elixir-py3-none-any.whl
-dpkg -i universal-ctags_0+git20200526-0ubuntu1_amd64.deb
-pip3 install Pygments-2.6.1.elixir-py3-none-any.whl
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://bootlin.com/pub/elixir/universal-ctags_0+git20200526-0ubuntu1_amd64.deb
+</span></span><span class="line"><span class="cl">wget https://bootlin.com/pub/elixir/Pygments-2.6.1.elixir-py3-none-any.whl
+</span></span><span class="line"><span class="cl">dpkg -i universal-ctags_0+git20200526-0ubuntu1_amd64.deb
+</span></span><span class="line"><span class="cl">pip3 install Pygments-2.6.1.elixir-py3-none-any.whl
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="配置环境变量">配置环境变量</h4>
 <ul>
@@ -181,9 +181,9 @@ pip3 install Pygments-2.6.1.elixir-py3-none-any.whl
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">export LXR_REPO_DIR=/srv/elixir-data/linux/repo
-export LXR_DATA_DIR=/srv/elixir-data/linux/data
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">export LXR_REPO_DIR=/srv/elixir-data/linux/repo
+</span></span><span class="line"><span class="cl">export LXR_DATA_DIR=/srv/elixir-data/linux/data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>使环境变量生效</li>
@@ -193,8 +193,8 @@ export LXR_DATA_DIR=/srv/elixir-data/linux/data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">source /etc/profile
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">source /etc/profile
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="下载配置kernel源码">下载配置kernel源码</h4>
 <ul>
@@ -206,8 +206,8 @@ export LXR_DATA_DIR=/srv/elixir-data/linux/data
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget https://mirrors.tuna.tsinghua.edu.cn/kernel/v5.x/linux-5.15.33.tar.gz
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://mirrors.tuna.tsinghua.edu.cn/kernel/v5.x/linux-5.15.33.tar.gz
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>建立相应目录</li>
@@ -218,9 +218,9 @@ export LXR_DATA_DIR=/srv/elixir-data/linux/data
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p $LXR_REPO_DIR
-mkdir -p $LXR_DATA_DIR
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir -p $LXR_REPO_DIR
+</span></span><span class="line"><span class="cl">mkdir -p $LXR_DATA_DIR
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>解压至<code>$LXR_REPO_DIR</code></li>
@@ -230,8 +230,8 @@ mkdir -p $LXR_DATA_DIR
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">tar -zvxf linux-5.15.33.tar.gz  --strip-components 1 -C $LXR_REPO_DIR
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tar -zvxf linux-5.15.33.tar.gz  --strip-components 1 -C $LXR_REPO_DIR
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="配置apache服务器">配置apache服务器</h3>
 <h4 id="安装依赖-1">安装依赖</h4>
@@ -240,8 +240,8 @@ mkdir -p $LXR_DATA_DIR
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt install -y apache2 libapache2-mod-wsgi-py3 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt install -y apache2 libapache2-mod-wsgi-py3 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>修改<code>/etc/apache2/sites-available/000-default.conf</code></li>
@@ -275,31 +275,31 @@ mkdir -p $LXR_DATA_DIR
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Directory /usr/local/elixir/http/&gt;
-    Options +ExecCGI
-    AllowOverride None
-    Require all granted
-    SetEnv PYTHONIOENCODING utf-8
-    SetEnv LXR_PROJ_DIR /srv/elixir-data
-&lt;/Directory&gt;
-&lt;Directory /usr/local/elixir/api/&gt;
-    SetHandler wsgi-script
-    Require all granted
-    SetEnv PYTHONIOENCODING utf-8
-    SetEnv LXR_PROJ_DIR /srv/elixir-data
-&lt;/Directory&gt;
-AddHandler cgi-script .py
-&lt;VirtualHost *:80&gt;
-    ServerName MY_LOCAL_IP
-    DocumentRoot /usr/local/elixir/http
-    WSGIScriptAlias /api /usr/local/elixir/api/api.py
-    AllowEncodedSlashes On
-    RewriteEngine on
-    RewriteRule &#34;^/$&#34; &#34;/linux/latest/source&#34; [R]
-    RewriteRule &#34;^/(?!api|acp).*/(source|ident|search)&#34; &#34;/web.py&#34; [PT]
-    RewriteRule &#34;^/acp&#34; &#34;/autocomplete.py&#34; [PT]
-&lt;/VirtualHost&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;Directory /usr/local/elixir/http/&gt;
+</span></span><span class="line"><span class="cl">    Options +ExecCGI
+</span></span><span class="line"><span class="cl">    AllowOverride None
+</span></span><span class="line"><span class="cl">    Require all granted
+</span></span><span class="line"><span class="cl">    SetEnv PYTHONIOENCODING utf-8
+</span></span><span class="line"><span class="cl">    SetEnv LXR_PROJ_DIR /srv/elixir-data
+</span></span><span class="line"><span class="cl">&lt;/Directory&gt;
+</span></span><span class="line"><span class="cl">&lt;Directory /usr/local/elixir/api/&gt;
+</span></span><span class="line"><span class="cl">    SetHandler wsgi-script
+</span></span><span class="line"><span class="cl">    Require all granted
+</span></span><span class="line"><span class="cl">    SetEnv PYTHONIOENCODING utf-8
+</span></span><span class="line"><span class="cl">    SetEnv LXR_PROJ_DIR /srv/elixir-data
+</span></span><span class="line"><span class="cl">&lt;/Directory&gt;
+</span></span><span class="line"><span class="cl">AddHandler cgi-script .py
+</span></span><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;
+</span></span><span class="line"><span class="cl">    ServerName MY_LOCAL_IP
+</span></span><span class="line"><span class="cl">    DocumentRoot /usr/local/elixir/http
+</span></span><span class="line"><span class="cl">    WSGIScriptAlias /api /usr/local/elixir/api/api.py
+</span></span><span class="line"><span class="cl">    AllowEncodedSlashes On
+</span></span><span class="line"><span class="cl">    RewriteEngine on
+</span></span><span class="line"><span class="cl">    RewriteRule &#34;^/$&#34; &#34;/linux/latest/source&#34; [R]
+</span></span><span class="line"><span class="cl">    RewriteRule &#34;^/(?!api|acp).*/(source|ident|search)&#34; &#34;/web.py&#34; [PT]
+</span></span><span class="line"><span class="cl">    RewriteRule &#34;^/acp&#34; &#34;/autocomplete.py&#34; [PT]
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>配置apache.conf</li>
@@ -309,8 +309,8 @@ AddHandler cgi-script .py
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo -e &#34;\nHttpProtocolOptions Unsafe&#34; &gt;&gt; /etc/apache2/apache.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo -e &#34;\nHttpProtocolOptions Unsafe&#34; &gt;&gt; /etc/apache2/apache.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>开启依赖模块</li>
@@ -320,8 +320,8 @@ AddHandler cgi-script .py
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a2enmod cgi rewrite
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a2enmod cgi rewrite
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>启动apache</li>
@@ -331,8 +331,8 @@ AddHandler cgi-script .py
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/usr/sbin/apache2ctl -D FOREGROUND
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/usr/sbin/apache2ctl -D FOREGROUND
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="安装配置bootlinexilir">安装配置bootlin/exilir</h3>
 <ul>
@@ -347,12 +347,12 @@ AddHandler cgi-script .py
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd $LXR_REPO_DIR
-cd ..
-chown -R www-data ./repo 
-cd /var
-chown -R www-data ./www
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd $LXR_REPO_DIR
+</span></span><span class="line"><span class="cl">cd ..
+</span></span><span class="line"><span class="cl">chown -R www-data ./repo 
+</span></span><span class="line"><span class="cl">cd /var
+</span></span><span class="line"><span class="cl">chown -R www-data ./www
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>切换账号到www-data操作（避免一些权限问题引起的错误）</li>
@@ -363,8 +363,8 @@ chown -R www-data ./www
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">www-data:x:33:33:www-data:/var/www:/bin/bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">www-data:x:33:33:www-data:/var/www:/bin/bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改www-data用户密码（自己设置一个）</p>
 <div class="highlight"><div class="chroma">
@@ -372,8 +372,8 @@ chown -R www-data ./www
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">passwd www-data
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">passwd www-data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>切换至www-data（可能提示输入密码，输入上面设置的就行）</p>
 <div class="highlight"><div class="chroma">
@@ -381,8 +381,8 @@ chown -R www-data ./www
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">su www-data
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">su www-data
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>回到<code>$LXR_REPO_DIR</code>，进行git初始化（带有v5.15版本号的可以根据自己需要调整）</li>
@@ -398,14 +398,14 @@ chown -R www-data ./www
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd $LXR_REPO_DIR
-git config --global user.email &#34;you@example.com&#34;
-git config --global user.name &#34;Your Name&#34;
-git init
-git add .
-git commit -m &#39;v5.15&#39;
-git tag v5.15
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd $LXR_REPO_DIR
+</span></span><span class="line"><span class="cl">git config --global user.email &#34;you@example.com&#34;
+</span></span><span class="line"><span class="cl">git config --global user.name &#34;Your Name&#34;
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#39;v5.15&#39;
+</span></span><span class="line"><span class="cl">git tag v5.15
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>切换回管理员用户，如<code>su ubuntu</code>，将bootlin/elixir项目clone下载</li>
@@ -415,8 +415,8 @@ git tag v5.15
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/bootlin/elixir.git /usr/local/elixir/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://github.com/bootlin/elixir.git /usr/local/elixir/
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>（最好不要修改<code>/usr/local/elixir/</code>）</p>
 <ul>
@@ -429,10 +429,10 @@ git tag v5.15
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git config --global --add safe.directory $LXR_REPO_DIR
-cd /usr/local/elixir/
-python3 update.py
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global --add safe.directory $LXR_REPO_DIR
+</span></span><span class="line"><span class="cl">cd /usr/local/elixir/
+</span></span><span class="line"><span class="cl">python3 update.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>（大约需等待一小时左右）</p>
 <ul>
@@ -471,11 +471,12 @@ python3 update.py
         </section>
     </div>
 
-    <div class="post-nav"><a href="/cilium_ebpf/" class="prev" rel="prev" title="Cilium eBPF 搭建与使用"><i class="fas fa-angle-left fa-fw"></i>Cilium eBPF 搭建与使用</a></div>
+    <div class="post-nav"><a href="/cilium_ebpf/" class="prev" rel="prev" title="Cilium eBPF 搭建与使用"><i class="fas fa-angle-left fa-fw"></i>Cilium eBPF 搭建与使用</a>
+            <a href="/libbpf_a_beginners_guide/" class="next" rel="next" title="【译】 Libbpf：初学者指南">【译】 Libbpf：初学者指南<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><p hidden><script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279728742&web_id=1279728742"></script></p></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line"><p hidden><script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279728742&web_id=1279728742"></script></p></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.95.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">barryX</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/">冀ICP备2021002807号-1</a></span></div>
         </div>

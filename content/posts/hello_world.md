@@ -1,7 +1,7 @@
 ---
 title: "Hello World!"
 date: 2022-03-15T23:33:27+08:00
-categories: ["杂"]
+categories: ["misc"]
 #draft: true
 ---
 

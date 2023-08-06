@@ -1,7 +1,7 @@
 ---
 title: "Cilium eBPF 搭建与使用"
 date: 2022-03-15T23:33:27+08:00
-categories: ["eBPF","Linux Kernel","Golang"]
+categories: ["eBPF","Linux Kernel"]
 ---
 
 目前使用 Go 开发 eBPF 程序可以使用的框架有 **IO Visor-gobpf**、**Dropbox-goebpf**和 **Cilium-ebpf**等，考虑到 Cilium 的社区活跃度和未来的发展，使用 Cilium 的 ebpf 是一个比较不错的选择。

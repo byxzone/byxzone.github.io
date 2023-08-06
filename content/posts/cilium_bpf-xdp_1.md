@@ -4,6 +4,8 @@ date: 2023-08-06T13:37:35+08:00
 categories: ["eBPF","Linux Kernel"]
 ---
 
+原文链接：https://docs.cilium.io/en/latest/bpf/architecture/
+
 BPF并不仅仅通过提供指令集来定义自身，还提供了进一步的基础设施，例如作为高效的键值存储的映射（maps），用于和内核功能进行交互的辅助函数（helper functions），用于调用其他BPF程序的尾调用（tail calls），用于安全加固的原语，用于固定对象（maps、programs）的伪文件系统，以及用于实现BPF卸载（offload）的基础设施，例如加载到网卡中。
 
 LLVM提供了一个BPF后端，以便可以使用类似clang的工具将C编译为BPF目标文件，然后将其加载到内核中。BPF与Linux内核紧密结合，允许在不牺牲本地内核性能的情况下进行完全的可编程性。
